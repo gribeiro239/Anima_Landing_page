@@ -1,0 +1,327 @@
+/* ==================== */
+/* 1) Design tokens     */
+/* ==================== */
+:root {
+    --cor-bg: #1B2431;
+    --cor-laranja: #C98D31;
+    --cor-texto: #FFFFFF;
+    --cor-texto-secund: #EEE;
+    --font-sans: 'Poppins', sans-serif;
+    --font-serif: 'Libre Caslon Text', serif;
+    --fs-xxl: 2.5rem;
+    --fs-xl: 2rem;
+    --fs-lg: 1.25rem;
+    --fs-md: 1rem;
+    --lh-lg: 1.5;
+  }
+  
+  /* ==================== */
+  /* 2) Reset + Body      */
+  /* ==================== */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--cor-bg);
+    color: var(--cor-texto);
+    line-height: 1.4;
+  }
+  main { max-width: 540px; margin: 0 auto; }
+  
+  /* ==================== */
+  /* 3) Botões genéricos  */
+  /* ==================== */
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn--primary {
+    background: var(--cor-laranja);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-md);
+    margin: 1.5rem auto;
+    display: block;
+  }
+  
+  /* ==================== */
+  /* 4) Masthead          */
+  /* ==================== */
+  .masthead {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+  }
+  .masthead__logo {
+    font-family: var(--font-serif);
+    font-size: var(--fs-xxl);
+  }
+  .masthead__tagline {
+    font-family: var(--font-serif);
+    font-size: var(--fs-md);
+    color: var(--cor-laranja);
+    letter-spacing: .1em;
+  }
+  
+  /* ==================== */
+  /* 5) Hero Intro        */
+  /* ==================== */
+  .hero {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .hero h2 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-xl);
+    line-height: 1.2;
+    margin-bottom: .75rem;
+  }
+  .hero__highlight {
+    color: var(--cor-laranja);
+  }
+  .hero__subtext {
+    font-size: var(--fs-md);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* ==================== */
+  /* 6) Check Sections    */
+  /* ==================== */
+  .check-section {
+    padding: 1rem 1rem 2rem;
+  }
+  .check-section--inverse {
+    background: #273047;
+  }
+  .check-section__title {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-serif);
+    font-size: var(--fs-lg);
+    margin-bottom: 1rem;
+  }
+  .check-section__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: .5rem;
+  }
+  .checklist {
+    list-style: none;
+  }
+  .checklist li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: var(--fs-md);
+    line-height: var(--lh-lg);
+    color: var(--cor-texto-secund);
+  }
+  .checklist li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--cor-laranja);
+  }
+  
+  /* ==================== */
+  /* 7) Pilares           */
+  /* ==================== */
+  .pilares {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .pilares h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* === COLE AQUI o CSS novo para empilhar os cards em mobile === */
+  /* Mobile-first: cada pilar um embaixo do outro */
+  .pilares__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  /* Centraliza e define largura do cartão */
+  .pilar {
+    text-align: center;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  
+  /* Imagem circular */
+  .pilar__img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+  
+  /* Título */
+  .pilar h3 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-lg);
+    margin-bottom: .75rem;
+    color: var(--cor-texto);
+  }
+  
+  /* Parágrafo */
+  .pilar p {
+    font-size: var(--fs-md);
+    line-height: var(--lh-lg);
+    color: var(--cor-texto-secund);
+    padding: 0 1rem;
+  }
+  
+  /* Opcional: volta pra 3 colunas em telas maiores */
+  @media (min-width: 768px) {
+    .pilares__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* ==================== */
+  /* 8) Aprendizado       */
+  /* ==================== */
+  .aprendizado {
+    padding: 2rem 1rem;
+  }
+  .aprendizado h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1rem;
+  }
+  
+  /* ==================== */
+  /* 9) Sessão           */
+  /* ==================== */
+  .sessao {
+    padding: 2rem 1rem;
+  }
+  .sessao h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1rem;
+  }
+  .sessao p {
+    font-size: var(--fs-md);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* ==================== */
+  /* 10) Quem é           */
+  /* ==================== */
+  .quem-e {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .quem-e h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1rem;
+  }
+  .quem-e__img {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* ==================== */
+  /* 11) Testemunhos      */
+  /* ==================== */
+  .testemunhos {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .testemunhos__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .testemunho img {
+    width: 100%;
+    border-radius: .5rem;
+  }
+  .testemunho figcaption {
+    margin-top: .5rem;
+    font-size: var(--fs-md);
+  }
+  
+  /* ==================== */
+  /* 12) Pagamento         */
+  /* ==================== */
+  .pagamento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  .pagamento__detalhes h3,
+  .pagamento__oferta h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: .5rem;
+    color: var(--cor-laranja);
+  }
+  .old-price {
+    text-decoration: line-through;
+    opacity: .7;
+  }
+  .pagamento__oferta p {
+    font-size: var(--fs-xl);
+    margin: .5rem 0;
+  }
+  
+  /* ==================== */
+  /* 13) Processo         */
+  /* ==================== */
+  .processo {
+    padding: 2rem 1rem;
+  }
+  .processo__item {
+    margin-bottom: 1.5rem;
+  }
+  .processo__item h4 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-lg);
+    margin-bottom: .5rem;
+    color: var(--cor-laranja);
+  }
+  .processo__item p {
+    font-size: var(--fs-md);
+    line-height: var(--lh-lg);
+  }
+  
+  /* ==================== */
+  /* 14) CTA final        */
+  /* ==================== */
+  .cta-final {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .cta-final p {
+    font-size: var(--fs-md);
+    margin-bottom: 1rem;
+  }
+  
+  /* ==================== */
+  /* 15) Responsividade    */
+  /* ==================== */
+  @media (min-width: 600px) {
+    .pilares__grid { grid-template-columns: repeat(3,1fr); }
+    .testemunhos__grid { grid-template-columns: repeat(2,1fr); }
+    .pagamento { grid-template-columns: repeat(2,1fr); }
+  }
+  

@@ -1,0 +1,678 @@
+/* styles.css */
+
+/* ==================== */
+/* 1) Design tokens     */
+/* ==================== */
+:root {
+    --cor-bg: #1B2431;
+    --cor-laranja: #C98D31;
+    --cor-texto: #FFFFFF;
+    --cor-texto-secund: #EEEEEE;
+    --font-sans: 'Poppins', sans-serif;
+    --font-serif: 'Libre Caslon Text', serif;
+    --fs-xxl: 2.5rem;   /* ~40px */
+    --fs-xl: 2rem;      /* ~32px */
+    --fs-lg: 1.25rem;   /* ~20px */
+    --fs-md: 1rem;      /* ~16px */
+    --fs-sm: 0.9rem;    /* ~14px */
+    --lh-lg: 1.5;
+  }
+  
+  /* ==================== */
+  /* 2) Reset & base      */
+  /* ==================== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--cor-bg);
+    color: var(--cor-texto);
+    line-height: 1.4;
+  }
+  main {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  
+  /* ==================== */
+  /* 3) Botões genéricos  */
+  /* ==================== */
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn--primary {
+    background: var(--cor-laranja);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-md);
+    margin: 1.5rem auto;
+    display: block;
+      
+    /* só isso aqui: */
+    text-decoration: underline;
+    text-underline-offset: 4px; 
+}
+
+  /* ==================== */
+  /* 4) Masterhead          */
+  /* ==================== */
+  .masthead {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: none;
+  }
+  
+  .masthead__logo-img {
+    display: inline-block;
+    max-width: 340px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  /* ==================== */
+  /* 5) Hero Intro        */
+  /* ==================== */
+  .hero {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .hero h2 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-xl);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .hero__highlight {
+    color: var(--cor-laranja);
+  }
+  .hero__subtext {
+    font-size: var(--fs-md);
+    margin-bottom: 1.5rem;
+    color: var(--cor-texto-secund);
+  }
+/* ====================
+   Vídeo (placeholder) 
+   ==================== */
+   .video-section {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .video-placeholder {
+    /* espaço 16:9 para inserir o vídeo depois */
+    width: 100%;
+    max-width: 540px;
+    padding-top: 56.25%;     /* 16:9 */
+    background: #000;        /* placeholder escuro */
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* divisor fino abaixo do vídeo */
+  .video-divider {
+    border: 0;
+    border-top: 1px solid var(--cor-texto-secund);
+    width: 80%;
+    max-width: 360px;
+    margin: 1.5rem auto;
+  }
+ 
+  /* ==================== */
+  /* 6) Check-section     */
+  /* ==================== */
+  .check-section {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .check-section__title {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+  }
+  
+  .check-section__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+  
+  .checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .checklist li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.25rem;    /* espaçamento reduzido */
+    font-size: var(--fs-sm);   /* texto menor */
+    line-height: var(--lh-lg);
+    color: var(--cor-texto-secund);
+  }
+  
+  .checklist li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--cor-texto);   /* bullet branco */
+  }
+  
+  /* ==================== */
+  /* 7) Image + Check     */
+  /* ==================== */
+  .image-check {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .image-check__img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  /* ==================== */
+  /* 8) Pilares           */
+  /* ==================== */
+  .pilares {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .pilares h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1.5rem;
+  }
+  .pilares__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .pilar {
+    text-align: center;
+    max-width: 360px;
+    margin: 0 auto;
+    background: var(--cor-bg);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .pilar__img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+  .pilar h3 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-lg);
+    margin-bottom: 0.75rem;
+    color: var(--cor-texto);
+  }
+  .pilar p {
+    font-size: var(--fs-md);
+    line-height: var(--lh-lg);
+    color: var(--cor-texto-secund);
+    padding: 0 1rem;
+  }
+  
+  /* ==================== */
+  /* 9) Aprendizado       */
+  /* ==================== */
+  .aprendizado {
+    padding: 2rem 1rem;
+  }
+  .aprendizado__container {
+    display: grid;
+    grid-template-columns: 1fr;  /* mobile: uma coluna só */
+    gap: 2rem;
+    align-items: start;
+  }
+  .aprendizado__media .aprendizado__img {
+    width: 105%;
+    display: block;
+    border-radius: 1rem;
+  }
+  .aprendizado__text h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .aprendizado__text .checklist {
+    margin-top: 0;
+  }
+  .aprendizado__text .checklist li {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* A partir de tablets: duas colunas lado a lado */
+  @media (min-width: 768px) {
+    .aprendizado__container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  #aprendizado .checklist {
+    list-style: none;      /* remove marcador padrão */
+    padding: 0;
+    margin: 0;
+  }
+  #aprendizado .checklist li {
+    padding-left: 0;       /* anula o espaço do marcador */
+  }
+  #aprendizado .checklist li::before {
+    content: none;         /* remove o bullet customizado */
+  }
+  
+  /* ==================== */
+  /* 10) Sessão Tomada de Consciência       */
+  /* ==================== */
+
+.sessao--cards {
+  position: relative;
+  padding: 1.5rem 1rem;                /* reduziu o padding geral */
+  background: var(--cor-bg);
+  overflow: hidden;
+}
+
+.sessao--cards::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  width: 25%;                         /* faixa central mais estreita */
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.sessao--cards > h2,
+.sessao--cards > p {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+/* grid responsivo de cards */
+.sessao__cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;                          /* menos espaçamento */
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .sessao__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* cards mais estreitos e compactos */
+.sessao__card {
+  border: 1px solid var(--cor-laranja);
+  border-radius: 1rem;                /* cantos menos arredondados */
+  padding: 1rem;                      /* padding interno reduzido */
+  max-width: 260px;                   /* largura máxima menor */
+  margin: 0 auto;                     /* centraliza em cada coluna */
+  background: transparent;
+  text-align: center;
+}
+
+/* título do card */
+.sessao__card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;                  /* menor que var(--fs-lg) */
+  color: var(--cor-laranja);
+  margin-bottom: 0.75rem;
+}
+
+/* texto do card */
+.sessao__card p {
+  font-size: 0.9rem;                  /* menor que var(--fs-md) */
+  line-height: 1.4;
+  color: var(--cor-texto-secund);
+  margin: 0;
+}
+  
+  /* ==================== */
+  /* 11) Quem é           */
+  /* ==================== */
+  .quem-e {
+    padding: 2rem 1rem;
+  }
+  .quem-e__container {
+    display: grid;
+    grid-template-columns: 1fr;  /* mobile: coluna única */
+    gap: 2rem;
+    align-items: center;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .quem-e__media .quem-e__img {
+    width: 95%;
+    display: block;
+    border-radius: 1rem;
+  }
+
+  .quem-e__text h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .quem-e__text p {
+    font-size: var(--fs-md);
+    line-height: var(--lh-lg);
+    color: var(--cor-texto-secund);
+  }
+  
+  /* Tablets e acima: duas colunas lado a lado */
+  @media (min-width: 768px) {
+    .quem-e__container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .section-divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.7);
+    width: 80%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    opacity: 0.7;
+  }
+
+  .section-divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.7);
+    width: 80%;
+    max-width: 360px;
+    margin: 1.5rem auto;    /* antes era 1.5rem, agora só 0.5rem em cima e embaixo */
+    opacity: 0.7;
+  }
+
+  /* ==================== */
+  /* 12) Testemunhos      */
+  /* ==================== */
+  .testemunhos {
+    padding: 1rem 1rem;
+    text-align: left;
+  }
+  .testemunhos h2 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-xl);
+    margin-bottom: 1.5rem;
+  }
+  .testemunhos__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .testemunho img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .testemunho figcaption {
+    margin-top: 0.5rem;
+    font-size: var(--fs-md);
+    color: var(--cor-texto);
+  }
+  
+/* ========================== */
+/* Takeaway – O que você leva */
+/* ========================== */
+.takeaway {
+  padding: 2rem 1rem;
+}
+
+.takeaway h3 {
+  font-family: var(--font-serif);
+  color: var(--cor-laranja);
+  font-size: 35px;
+  margin-bottom: 1rem;
+  text-align: center;     
+}
+
+.takeaway-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 540px;
+  text-align: left;       
+}
+
+.takeaway-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: var(--fs-md);
+  line-height: var(--lh-lg);
+  color: var(--cor-texto-secund);
+  text-align: left;       
+}
+
+.takeaway-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+
+/* usa o ícone de check verde como bullet */
+.takeaway-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;              /* centraliza verticalmente o ícone */
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url("../Assets/white_check_2.png") no-repeat center center;
+  background-size: contain;
+}
+
+  /* ==================== */
+  /* 13) Pagamento        */
+  /* ==================== */
+  .pagamento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  /* Colunas */
+  .pagamento__detalhes,
+  .pagamento__oferta {
+    text-align: left;
+  }
+  
+  /* Divider vertical */
+  @media (min-width: 768px) {
+    .pagamento {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+    .pagamento__detalhes {
+      padding-right: 2rem;
+      border-right: 1px solid var(--cor-texto-secund);
+    }
+    .pagamento__oferta {
+      padding-left: 2rem;
+    }
+  }
+  
+  /* Títulos */
+  .pagamento__detalhes h3,
+  .pagamento__oferta h3 {
+    font-family: var(--font-serif);
+    color: var(--cor-branco);
+    font-size: var(--fs-xl);
+    margin-bottom: 1rem;
+  }
+  
+  /* Lista de detalhes */
+  .pagamento__detalhes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pagamento__detalhes li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: var(--fs-md);
+    color: var(--cor-texto-secund);
+  }
+  .pagamento__detalhes li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--cor-laranja);
+  }
+  
+  /* Preços */
+  .old-price {
+    position: relative;
+    display: inline-block;
+    font-size: var(--fs-md);
+    color: var(--cor-texto-secund);
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+  }
+  
+  /* Pseudo-elemento que desenha a linha inclinada */
+  .old-price::after {
+    content: "";
+    position: absolute;
+    top: 50%;              /* posiciona verticalmente no meio do texto */
+    left: 10%;            /* começa um pouco antes da borda esquerda */
+    width: 90%;           /* cobre o texto inteiro e sai um pouco na direita */
+    height: 1px;           /* espessura da linha */
+    background: var(--cor-texto-secund);
+    transform: rotate(-20deg); /* ângulo de inclinação */
+    transform-origin: center center;
+  }
+  .new-price {
+    font-size: var(--fs-lg);
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+  }
+  
+  /* Botão já está com underline? garante espaçamento */
+  .pagamento__oferta .btn--primary {
+    margin: 0;
+  }
+  .pagamento__detalhes ul li {
+    /* bullets brancos */
+    color: var(--cor-texto);          
+    /* sem quebra de linha dentro do item */
+    white-space: nowrap;              
+    overflow: hidden;                 
+    text-overflow: ellipsis;          
+  }
+  
+  /* bullet customizado (•) em branco */
+  .pagamento__detalhes ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--cor-texto);
+  }
+  
+  /* tamanho do texto “Apenas:” um pouco maior */
+  .new-price {
+    font-size: 1.1rem;     /* antes era var(--fs-lg) */
+    margin-bottom: 1rem;
+  }
+  
+  /* número do preço ainda maior */
+  .new-price strong {
+    font-size: 1.8rem;     /* ajusta conforme necessidade */
+    line-height: 1;
+  }
+  
+  /* botão sem quebra de linha */
+  .pagamento__oferta .btn--primary {
+    white-space: nowrap;
+  }
+
+
+
+  
+  /* ==================== */
+  /* 14) Processo         */
+  /* ==================== */
+  .processo {
+    padding: 2rem 1rem;
+  }
+  .processo__item {
+    margin-bottom: 1.5rem;
+  }
+  .processo__item h4 {
+    font-family: var(--font-serif);
+    color: var(--cor-laranja);
+    font-size: var(--fs-lg);
+    margin-bottom: 0.5rem;
+  }
+  .processo__item p {
+    font-size: var(--fs-md);
+    line-height: var(--lh-lg);
+    color: var(--cor-texto-secund);
+  }
+  
+  /* ==================== */
+  /* 15) CTA final        */
+  /* ==================== */
+  .cta-final {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .cta-final p {
+    font-size: var(--fs-md);
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+  }
+  
+  /* ==================== */
+  /* 16) Responsividade    */
+  /* ==================== */
+  @media (min-width: 768px) {
+    .pilares__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .testemunhos__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .pagamento {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
